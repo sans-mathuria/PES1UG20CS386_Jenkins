@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'gcc new.cpp -lstdc++'
+        sh 'g++ new.cpp -o new'
         echo 'Build Stage Successful'  
     }
   }
     stage('Test'){
     steps {
-    sh './a.out'
+    sh './new'
     echo 'Test Stage Successful'
     post {
       always {
